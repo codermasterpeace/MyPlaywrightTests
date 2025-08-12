@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|c:\\vsonline\\playwright\\mstest\\mysecondplaywrighttests\\playwrighttests\\myfirsttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|solutionrelative:myfirsttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|c:\\vsonline\\playwright\\mstest\\mysecondplaywrighttests\\playwrighttests\\tracingtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|solutionrelative:tracingtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|c:\\vsonline\\playwright\\mstest\\mysecondplaywrighttests\\playwrighttests\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|solutionrelative:mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|c:\\vsonline\\playwright\\mstest\\mysecondplaywrighttests\\playwrighttests\\playwrighttests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BE7E45F9-FB5D-BBC9-9980-4498E4C52975}|PlaywrightTests.csproj|solutionrelative:playwrighttests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlaywrightTests",
+              "DocumentMoniker": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\PlaywrightTests.csproj",
+              "RelativeDocumentMoniker": "PlaywrightTests.csproj",
+              "ToolTip": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\PlaywrightTests.csproj",
+              "RelativeToolTip": "PlaywrightTests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-12T20:08:51.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TracingTest.cs",
+              "DocumentMoniker": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\TracingTest.cs",
+              "RelativeDocumentMoniker": "TracingTest.cs",
+              "ToolTip": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\TracingTest.cs",
+              "RelativeToolTip": "TracingTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T20:09:36.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyFirstTest.cs",
+              "DocumentMoniker": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\MyFirstTest.cs",
+              "RelativeDocumentMoniker": "MyFirstTest.cs",
+              "ToolTip": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\MyFirstTest.cs",
+              "RelativeToolTip": "MyFirstTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T17:19:01.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MSTestSettings.cs",
+              "DocumentMoniker": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\MSTestSettings.cs",
+              "RelativeDocumentMoniker": "MSTestSettings.cs",
+              "ToolTip": "C:\\vsonline\\Playwright\\mstest\\MySecondPlaywrightTests\\PlaywrightTests\\MSTestSettings.cs",
+              "RelativeToolTip": "MSTestSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T17:19:00.873Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
