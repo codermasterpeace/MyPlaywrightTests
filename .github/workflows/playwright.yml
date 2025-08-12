@@ -14,17 +14,18 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
-        # Using 9.0.x to match your project configuration
         dotnet-version: 9.0.x
 
+    # THE FIX IS HERE: We added the build step back in.
+    - name: Build the project
+      run: dotnet build ./MyPlaywrightTests/MyPlaywrightTests.csproj
+
     - name: Install Playwright browsers
-      # The path is now correct: it looks inside your project folder for the script
+      # This step will now succeed because the build created the necessary files.
       run: pwsh ./MyPlaywrightTests/bin/Debug/net9.0/playwright.ps1 install --with-deps
 
     - name: Run tests
-      # This command is simple and correct. It runs your project test.
-      # The C# code in TracingTest.cs now automatically handles tracing.
-      # We no longer need the --settings flag.
+      # This will run the tests and our C# code will handle the trace on failure.
       run: dotnet test ./MyPlaywrightTests/MyPlaywrightTests.csproj
 
     - name: Upload trace files on failure
@@ -32,6 +33,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-trace
-        # This path correctly finds the trace file our C# code creates
         path: "**/TestResults/**/*.zip"
         retention-days: 7
