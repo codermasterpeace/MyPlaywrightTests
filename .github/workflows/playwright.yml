@@ -13,10 +13,23 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
-    - name: Build & Install
+        dotnet-version: 9.0.x 
+        
+    - name: Build project
       run: dotnet build
-    - name: Ensure browsers are installed
+
+    - name: Install Playwright browsers
       run: pwsh bin/Debug/net9.0/playwright.ps1 install --with-deps
+
     - name: Run your tests
-      run: dotnet test
+      # We now tell dotnet to use our settings file
+      run: dotnet test --settings MyPlaywright.runsettings
+
+    # CORRECTED STEP: This is now correctly indented inside the 'steps' list
+    - name: Upload trace files on failure
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-trace
+        path: "**/TestResults/**/*.zip" # This path is more robust
+        retention-days: 7

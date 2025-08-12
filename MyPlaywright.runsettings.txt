@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <Playwright>
+    <BrowserName>chromium</BrowserName>
+    <Headless>true</Headless>
+    <!-- This is the magic part! -->
+    <Trace>OnFirstRetry</Trace>
+  </Playwright>
+  <NUnit>
+    <!-- We need to give failed tests one chance to retry -->
+    <Retry>1</Retry>
+  </NUnit>
+</RunSettings>
