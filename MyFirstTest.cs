@@ -12,6 +12,6 @@ public class MyFirstTest : PageTest
     public async Task ShouldHaveCorrectTitle()
     {
         await Page.GotoAsync("https://playwright.dev/");
-        await Expect(Page).ToHaveTitleAsync("Fast and reliable end-to-end testing for modern web apps | Playwright");
+        await Expect(Page).ToHaveTitleAsync("sample lang");
     }
 }
