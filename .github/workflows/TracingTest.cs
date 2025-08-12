@@ -1,3 +1,5 @@
+namespace MyPlaywrightTests; // <-- THIS IS THE FIX. ADD THIS LINE.
+
 using Microsoft.Playwright.NUnit;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
