@@ -1,18 +1,17 @@
-﻿using Microsoft.Playwright.MSTest;
-using Microsoft.VisualStudio.TestTools.UnitTesting; // Use the correct MSTest 'using' statement
+﻿using Microsoft.Playwright.NUnit;
+using NUnit.Framework;
 using System.Threading.Tasks;
 
 namespace MyPlaywrightTests;
 
-[TestClass] // Use the correct MSTest attribute
-public class MyFirstTest : TracingTest // <-- IMPORTANT: Inherit from TracingTest
+[Parallelizable(ParallelScope.Self)]
+[TestFixture]
+public class MyFirstTest : PageTest
 {
-    [TestMethod] // Use the correct MSTest attribute
+    [Test]
     public async Task ShouldHaveCorrectTitle()
     {
         await Page.GotoAsync("https://playwright.dev/");
-
-        // IMPORTANT: Keep this test failing so we can confirm the trace upload works.
-        await Expect(Page).ToHaveTitleAsync("This title is wrong to make the test fail");
+        await Expect(Page).ToHaveTitleAsync("Fast and reliable end-to-end testing for modern web apps | Playwright");
     }
 }
