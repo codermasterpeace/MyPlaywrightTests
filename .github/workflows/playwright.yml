@@ -16,22 +16,26 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
-    # THE FIX IS HERE: We added the build step back in.
     - name: Build the project
-      run: dotnet build ./MyPlaywrightTests/MyPlaywrightTests.csproj
+      # We run this command from inside the correct folder.
+      run: dotnet build
+      working-directory: ./MyPlaywrightTests
 
     - name: Install Playwright browsers
-      # This step will now succeed because the build created the necessary files.
-      run: pwsh ./MyPlaywrightTests/bin/Debug/net9.0/playwright.ps1 install --with-deps
+      # This command also runs from inside the project folder.
+      run: pwsh bin/Debug/net9.0/playwright.ps1 install --with-deps
+      working-directory: ./MyPlaywrightTests
 
     - name: Run tests
-      # This will run the tests and our C# code will handle the trace on failure.
-      run: dotnet test ./MyPlaywrightTests/MyPlaywrightTests.csproj
+      # This also runs from inside the project folder.
+      run: dotnet test
+      working-directory: ./MyPlaywrightTests
 
     - name: Upload trace files on failure
       if: failure()
       uses: actions/upload-artifact@v4
       with:
         name: playwright-trace
-        path: "**/TestResults/**/*.zip"
+        # The artifact path is relative to the repository root.
+        path: ./MyPlaywrightTests/TestResults/**/*.zip
         retention-days: 7

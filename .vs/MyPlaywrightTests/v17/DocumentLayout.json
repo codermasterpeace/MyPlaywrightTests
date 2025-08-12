@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\vsonline\\Playwright\\nunit\\MyPlaywrightTests\\",
+  "WorkspaceRootPath": "C:\\Users\\gsingian\\Downloads\\MyPlaywrightTests\\MyPlaywrightTests\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E275AE4-27E4-8050-3E7B-1585845057D5}|MyPlaywrightTests.csproj|c:\\vsonline\\playwright\\nunit\\myplaywrighttests\\myfirsttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E275AE4-27E4-8050-3E7B-1585845057D5}|MyPlaywrightTests.csproj|c:\\users\\gsingian\\downloads\\myplaywrighttests\\myplaywrighttests\\myfirsttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E275AE4-27E4-8050-3E7B-1585845057D5}|MyPlaywrightTests.csproj|solutionrelative:myfirsttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MyFirstTest.cs",
-              "DocumentMoniker": "C:\\vsonline\\Playwright\\nunit\\MyPlaywrightTests\\MyFirstTest.cs",
+              "DocumentMoniker": "C:\\Users\\gsingian\\Downloads\\MyPlaywrightTests\\MyPlaywrightTests\\MyFirstTest.cs",
               "RelativeDocumentMoniker": "MyFirstTest.cs",
-              "ToolTip": "C:\\vsonline\\Playwright\\nunit\\MyPlaywrightTests\\MyFirstTest.cs",
+              "ToolTip": "C:\\Users\\gsingian\\Downloads\\MyPlaywrightTests\\MyPlaywrightTests\\MyFirstTest.cs",
               "RelativeToolTip": "MyFirstTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-12T16:01:02.26Z",
               "EditorCaption": ""

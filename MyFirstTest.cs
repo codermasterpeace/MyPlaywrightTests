@@ -1,13 +1,12 @@
-﻿using Microsoft.Playwright.MSTest;
-using Microsoft.VisualStudio.TestTools.UnitTesting; // Use the correct MSTest 'using' statement
+﻿using NUnit.Framework; // Use the correct NUnit 'using' statement
 using System.Threading.Tasks;
 
 namespace MyPlaywrightTests;
 
-[TestClass] // Use the correct MSTest attribute
+[TestFixture] // Use the correct NUnit attribute
 public class MyFirstTest : TracingTest // <-- IMPORTANT: Inherit from TracingTest
 {
-    [TestMethod] // Use the correct MSTest attribute
+    [Test] // Use the correct NUnit attribute
     public async Task ShouldHaveCorrectTitle()
     {
         await Page.GotoAsync("https://playwright.dev/");
