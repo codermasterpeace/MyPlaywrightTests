@@ -6,26 +6,30 @@ on:
     branches: [ main, master ]
 jobs:
   test:
-    timeout-minutes: 15
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: 9.0.x 
+        
+    - name: Build project
+      run: dotnet build
 
-    - name: Run tests and generate trace
-      # This command tells GitHub to first move into your project folder...
-      working-directory: ./MyPlaywrightTests
-      # ...and then run the test command. It will now find the .runsettings file.
+    - name: Install Playwright browsers
+      run: pwsh bin/Debug/net9.0/playwright.ps1 install --with-deps
+
+    - name: Run your tests
+      # We now tell dotnet to use our settings file
       run: dotnet test --settings MyPlaywright.runsettings
 
+    # CORRECTED STEP: This is now correctly indented inside the 'steps' list
     - name: Upload trace files on failure
       if: failure()
       uses: actions/upload-artifact@v4
       with:
         name: playwright-trace
-        # The path must be relative to the repository root.
-        path: ./MyPlaywrightTests/TestResults/**/*.zip
+        path: "**/TestResults/**/*.zip" # This path is more robust
         retention-days: 7
