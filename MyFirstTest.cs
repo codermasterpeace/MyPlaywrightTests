@@ -13,6 +13,6 @@ public class MyFirstTest : TracingTest // <-- IMPORTANT: Inherit from TracingTes
         await Page.GotoAsync("https://playwright.dev/");
 
         // IMPORTANT: Keep this test failing so we can confirm the trace upload works.
-        await Expect(Page).ToHaveTitleAsync("This title is wrong to make the test failsss");
+        await Expect(Page).ToHaveTitleAsync("This title is wrong to make the test fail");
     }
 }
