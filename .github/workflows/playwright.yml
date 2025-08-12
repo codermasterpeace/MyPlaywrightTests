@@ -8,36 +8,24 @@ jobs:
   test:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    
-    # Set the default shell to PowerShell for consistency
-    defaults:
-      run:
-        shell: pwsh
-
     steps:
     - uses: actions/checkout@v4
-
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 9.0.x
 
-    - name: Build project
-      run: dotnet build ./MyPlaywrightTests/MyPlaywrightTests.csproj
-
-    - name: Install Playwright browsers
-      # The playwright.ps1 script is inside the project's build output
-      run: ./MyPlaywrightTests/bin/Debug/net9.0/playwright.ps1 install --with-deps
-
-    - name: Run tests
-      # We tell dotnet test to run the specific project, which contains the .runsettings file
-      run: dotnet test ./MyPlaywrightTests/MyPlaywrightTests.csproj --settings ./MyPlaywrightTests/MyPlaywright.runsettings
+    - name: Run tests and generate trace
+      # This command tells GitHub to first move into your project folder...
+      working-directory: ./MyPlaywrightTests
+      # ...and then run the test command. It will now find the .runsettings file.
+      run: dotnet test --settings MyPlaywright.runsettings
 
     - name: Upload trace files on failure
       if: failure()
       uses: actions/upload-artifact@v4
       with:
         name: playwright-trace
-        # The path to the results is inside the project folder
-        path: MyPlaywrightTests/TestResults/**/*.zip
+        # The path must be relative to the repository root.
+        path: ./MyPlaywrightTests/TestResults/**/*.zip
         retention-days: 7
