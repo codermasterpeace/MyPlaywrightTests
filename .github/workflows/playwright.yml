@@ -20,14 +20,14 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
 
     - name: Build project
       run: dotnet build ./MyPlaywrightTests/MyPlaywrightTests.csproj
 
     - name: Install Playwright browsers
       # The playwright.ps1 script is inside the project's build output
-      run: ./MyPlaywrightTests/bin/Debug/net8.0/playwright.ps1 install --with-deps
+      run: ./MyPlaywrightTests/bin/Debug/net9.0/playwright.ps1 install --with-deps
 
     - name: Run tests
       # We tell dotnet test to run the specific project, which contains the .runsettings file
