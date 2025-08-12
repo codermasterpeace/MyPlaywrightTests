@@ -17,25 +17,24 @@ jobs:
         dotnet-version: 9.0.x
 
     - name: Build the project
-      # We run this command from inside the correct folder.
+      # We do not need a path or working-directory. 
+      # The checkout action places us in the folder with the .csproj file.
       run: dotnet build
-      working-directory: ./MyPlaywrightTests
 
     - name: Install Playwright browsers
-      # This command also runs from inside the project folder.
+      # The path is now simple because we are already in the correct folder.
       run: pwsh bin/Debug/net9.0/playwright.ps1 install --with-deps
-      working-directory: ./MyPlaywrightTests
 
     - name: Run tests
-      # This also runs from inside the project folder.
+      # Same as build, dotnet test will find the project automatically.
+      # Our NUnit C# code will handle the trace on failure.
       run: dotnet test
-      working-directory: ./MyPlaywrightTests
 
     - name: Upload trace files on failure
       if: failure()
       uses: actions/upload-artifact@v4
       with:
         name: playwright-trace
-        # The artifact path is relative to the repository root.
-        path: ./MyPlaywrightTests/TestResults/**/*.zip
+        # The TestResults folder will be created in the current directory.
+        path: TestResults/**/*.zip
         retention-days: 7
