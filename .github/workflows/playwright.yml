@@ -6,7 +6,7 @@ on:
     branches: [ main, master ]
 jobs:
   test:
-    timeout-minutes: 15 # Reduced for faster feedback
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -14,16 +14,17 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
-        # Using 9.0.x to match your configuration
+        # Using 9.0.x to match your project configuration
         dotnet-version: 9.0.x
 
     - name: Install Playwright browsers
-      # The correct path includes the project folder name
+      # The path is now correct: it looks inside your project folder for the script
       run: pwsh ./MyPlaywrightTests/bin/Debug/net9.0/playwright.ps1 install --with-deps
 
     - name: Run tests
-      # We target the project file and no longer need the --settings flag.
-      # The C# code in TracingTest.cs will now handle tracing automatically.
+      # This command is simple and correct. It runs your project test.
+      # The C# code in TracingTest.cs now automatically handles tracing.
+      # We no longer need the --settings flag.
       run: dotnet test ./MyPlaywrightTests/MyPlaywrightTests.csproj
 
     - name: Upload trace files on failure
@@ -31,6 +32,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-trace
-        # This path correctly finds the trace file created by our C# code
+        # This path correctly finds the trace file our C# code creates
         path: "**/TestResults/**/*.zip"
         retention-days: 7
